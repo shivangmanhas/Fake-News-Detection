@@ -1,52 +1,82 @@
 
-# 📰 Fake News Detection App
+# 📰 Fake News Detection using NLP & Machine Learning
 
-This is a simple Streamlit web app that predicts whether a given news statement is **real** or **fake** using a machine learning model trained on the LIAR dataset.
+This project is a Fake News Detection system built using the **LIAR dataset**. It applies **Natural Language Processing (NLP)** and **machine learning** techniques to classify short political statements as either **real** or **fake**. The app is deployed via **Streamlit** to allow users to test the model with their own input.
 
-## 🚀 Features
-- Input any news statement
-- Cleans and preprocesses text
-- Uses TF-IDF and a Logistic Regression model to classify as real or fake
-- Interactive interface with Streamlit
+## 🚀 Demo
 
-## 📁 Files
-- `app.py` – Streamlit app code
-- `fake_news_model.pkl` – Trained Logistic Regression model
-- `tfidf_vectorizer.pkl` – Fitted TF-IDF vectorizer
-- `requirements.txt` – List of dependencies
+👉 Try it live : [Streamlit App URL]
 
-## 🔧 Installation
+## 📦 Project Structure
 
-1. Clone the repository:
-   ```bash
+```
+├── app.py                   # Streamlit app file
+├── fake_news_model.pkl      # Trained Logistic Regression model
+├── tfidf_vectorizer.pkl     # TF-IDF vectorizer used during training
+├── requirements.txt         # Required Python packages
+└── README.md
+```
+
+## 🧠 Model Details
+
+- **Dataset**: [LIAR Dataset](https://www.cs.ucsb.edu/~william/data/liar_dataset.zip)
+- **Target labels**: Originally multi-class (true, false, half-true, etc.)  
+  → Converted to binary: **real** vs **fake**
+- **Vectorization**: TF-IDF (top 5000 features)
+- **Models Tested**: Logistic Regression, Naive Bayes, Random Forest
+- **Best Performing**: Logistic Regression (balanced accuracy & explainability)
+
+## 🧹 Data Preprocessing
+
+- Lowercasing
+- Punctuation removal
+- Stopword removal (from NLTK)
+- TF-IDF vectorization
+
+## 📈 Evaluation
+
+- ROC curves for all models
+- Confusion matrices
+- Feature importance (top words contributing to fake/real predictions)
+- Sample misclassifications explored
+
+## 💻 Run Locally
+
+1. Clone the repo:
+ 
    git clone https://github.com/yourusername/fake-news-detection-streamlit.git
    cd fake-news-detection-streamlit
-   ```
+   
 
 2. Install dependencies:
-   ```bash
+
    pip install -r requirements.txt
-   ```
+
 
 3. Run the app:
-   ```bash
+
    streamlit run app.py
-   ```
 
-## 🌐 Deployment
 
-You can deploy this app for free using [Streamlit Cloud](https://share.streamlit.io):
-- Upload your files to GitHub
-- Connect your repo to Streamlit Cloud
-- Set `app.py` as the entry point
+## 🌍 Deploy on Streamlit Cloud
 
-## 📊 Model Info
+- Upload all files to GitHub
+- Go to [Streamlit Cloud](https://share.streamlit.io)
+- Connect repo and set `app.py` as the entry point
 
-Trained using Logistic Regression on the LIAR dataset.
-- Text cleaned and vectorized using TF-IDF
-- Binary classification: `real` vs `fake`
+## 🧾 Sample Use
 
-## ✍️ Author
+Paste a news statement like:
+```
+"The unemployment rate has dropped to its lowest point in 50 years."
+```
+And the app will predict whether it's **REAL** or **FAKE** based on model inference.
 
-Created by [Your Name]. Connect on [LinkedIn](https://linkedin.com).
+## ✨ Author
 
+**Shivang Singh Manhas**  
+[LinkedIn](https://www.linkedin.com/in/shivangmanhas) | [GitHub](https://github.com/shivangmanhas)
+
+---
+
+📬 Feel free to connect, fork, or provide feedback!
