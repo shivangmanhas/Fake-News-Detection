@@ -5,7 +5,7 @@ This project is a Fake News Detection system built using the **LIAR dataset**. I
 
 ## 🚀 Demo
 
-👉 Try it live : [Streamlit App URL]
+👉 Try it live : [[Streamlit App URL](https://fake-news-detection-69esj4uppayjusnynwazfz.streamlit.app/)]
 
 ## 📦 Project Structure
 
